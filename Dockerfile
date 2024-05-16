@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/V-School-0.0.1-SNAPSHOT.jar V-School.jar
+COPY --from=build /target/V-School-0.0.1-SNAPSHOT.jar demo.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","V-School.jar"]
+ENTRYPOINT ["java","-jar","demo.jar"]
